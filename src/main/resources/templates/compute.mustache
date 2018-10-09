@@ -1,11 +1,19 @@
 <title>My application deployed automatically</title>
   <h1>Hello, World!</h1>
-    Result is {{result}}
-
+  <p>
+    This program takes multiple integers separated with any whitespace in first and second field.(Call it P1 , P2)<br>
+    Only an and integer in third and fourth field.(call it m , n)<br>
+    It will take first m element of P1 , then first n element of P2 and append them.<br>
+    If there is not enough elements it will just take to the end of set.<br>
+  </p>
+    Result is
+    {{#result}}{{.}} {{#result}}
 
   <form action="compute" method="post">
         <textarea name="input1" rows="10" cols="30"></textarea>
         <textarea name="input2" rows="10" cols="30"></textarea>
+        <textarea name="input3" rows="10" cols="30"></textarea>
+        <textarea name="input4" rows="10" cols="30"></textarea>
         <br>
         <input type="submit">
   </form>
