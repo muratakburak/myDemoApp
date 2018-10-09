@@ -27,12 +27,16 @@ public class App
 
     public static String[] computeMyResult( ArrayList<Integer> arr1 , ArrayList<Integer> arr2 , int a , int b ){
         int k = 0 , len = Math.min( a , arr1.size() ) + Math.min( b , arr2.size() ) ;
+        if( len == 0 ) len = 1 ;
         String[] result = new String[len] ;
         for(int i = 0; i<a && i < arr1.size() ; i++ )
             result[k++] = arr1.get( i ).toString() ;
         for( int i=0 ; i<b && i < arr2.size() ; i++ )
             result[k++] = arr2.get( i ).toString() ;
 
+        result[0] = "[" + result[0] ;
+        result[len-1] = result[len-1] + "]" ;
+        for( int i=0 ; i < len-1 ; i++ ) result[i] += ", " ;
         return result;
     }
 
