@@ -28,7 +28,7 @@ public class App
     public static String[] computeMyResult( ArrayList<Integer> arr1 , ArrayList<Integer> arr2 , int a , int b ){
         int k = 0 , len = Math.min( a , arr1.size() ) + Math.min( b , arr2.size() ) ;
         if( len == 0 ) len = 1 ;
-        String[] result = new String[len] ;
+        String[] result = new String[len] ; result[0] = "" ;
         for(int i = 0; i<a && i < arr1.size() ; i++ )
             result[k++] = arr1.get( i ).toString() ;
         for( int i=0 ; i<b && i < arr2.size() ; i++ )
@@ -43,7 +43,7 @@ public class App
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World");
+        get("/", (req, res) -> "Hi. This is my homepage for my Bil481 HW#1.Go to '/compute'. Mehmet Murat Akburak 161101079");
 
         post("/compute", (req, res) -> {
             //System.out.println(req.queryParams("input1"));
